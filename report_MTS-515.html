@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MTS-515 – Sell Silver - Confirmation</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         background: #f5f5f5; color: #333; }
+  .header { background: #1a1a2e; color: #fff; padding: 24px 32px; }
+  .header h1 { font-size: 1.5rem; font-weight: 600; }
+  .header .meta { font-size: 0.85rem; opacity: 0.7; margin-top: 4px; }
+  .summary { display: flex; gap: 16px; padding: 20px 32px;
+             background: #fff; border-bottom: 1px solid #e0e0e0; flex-wrap: wrap; }
+  .stat { text-align: center; min-width: 80px; }
+  .stat .num { font-size: 2rem; font-weight: 700; }
+  .stat .lbl { font-size: 0.75rem; color: #666; text-transform: uppercase; }
+  .stat.pass .num { color: #2e7d32; }
+  .stat.fail .num { color: #c62828; }
+  .stat.skip .num { color: #f57f17; }
+  .stat.total .num { color: #1565c0; }
+
+  .container { padding: 24px 32px; }
+  .story-group { margin-bottom: 24px; }
+  .story-title { font-size: 1rem; font-weight: 600; color: #555;
+                 padding: 8px 12px; background: #e8eaf6; border-radius: 6px 6px 0 0;
+                 border-left: 4px solid #3949ab; }
+  .tc-card { background: #fff; border: 1px solid #e0e0e0; border-top: none;
+             border-radius: 0 0 6px 6px; overflow: hidden; }
+  .tc-card + .tc-card { border-top: 1px solid #e0e0e0; }
+  .tc-header { display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+               cursor: pointer; user-select: none; }
+  .tc-header:hover { background: #fafafa; }
+  .tc-id { font-family: monospace; font-size: 0.8rem; color: #555; min-width: 160px; }
+  .tc-name { flex: 1; font-size: 0.9rem; }
+  .badge { padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+  .badge.pass { background: #e8f5e9; color: #2e7d32; }
+  .badge.fail { background: #ffebee; color: #c62828; }
+  .badge.skip,.badge.not_run { background: #fff8e1; color: #f57f17; }
+  .badge.error { background: #fce4ec; color: #880e4f; }
+  .platform-tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 8px;
+                  background: #e3f2fd; color: #1565c0; }
+  .tc-body { padding: 16px; border-top: 1px solid #f0f0f0; display: none; }
+  .tc-body.open { display: block; }
+  .section-title { font-size: 0.75rem; font-weight: 600; color: #888;
+                   text-transform: uppercase; margin: 12px 0 6px; }
+  .steps-list { list-style: decimal; padding-left: 20px; font-size: 0.85rem; line-height: 1.8; }
+  .expected { background: #f9fbe7; border-left: 3px solid #aed581;
+              padding: 8px 12px; font-size: 0.85rem; border-radius: 2px; }
+  .error-box { background: #ffebee; border-left: 3px solid #ef9a9a;
+               padding: 8px 12px; font-size: 0.85rem; border-radius: 2px; color: #c62828; }
+  .screenshots { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .screenshot-item { text-align: center; }
+  .screenshot-item img { max-height: 280px; max-width: 160px; border: 1px solid #ddd;
+                          border-radius: 6px; display: block; cursor: pointer; }
+  .screenshot-item .cap { font-size: 0.7rem; color: #888; margin-top: 4px; }
+  .video-link { display: inline-flex; align-items: center; gap: 6px;
+                padding: 6px 14px; background: #e8eaf6; border-radius: 6px;
+                text-decoration: none; color: #3949ab; font-size: 0.85rem; }
+  .video-link:hover { background: #c5cae9; }
+  /* Lightbox */
+  .lb { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+        z-index: 999; align-items: center; justify-content: center; }
+  .lb.open { display: flex; }
+  .lb img { max-height: 90vh; max-width: 90vw; border-radius: 4px; }
+  .lb-close { position: fixed; top: 16px; right: 24px; color: #fff;
+              font-size: 2rem; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>MTS-515 – Sell Silver - Confirmation</h1>
+  <div class="meta">Generated: 2026-07-01 13:30:38 &nbsp;|&nbsp; Total: 3 TCs</div>
+</div>
+
+<div class="summary">
+  <div class="stat total"><div class="num">3</div><div class="lbl">Total</div></div>
+  <div class="stat pass"><div class="num">0</div><div class="lbl">Pass</div></div>
+  <div class="stat fail"><div class="num">0</div><div class="lbl">Fail</div></div>
+  <div class="stat skip"><div class="num">3</div><div class="lbl">Not Run</div></div>
+</div>
+
+<div class="container">
+
+  <div class="story-group">
+    <div class="story-title">MTS-515 — Sell Silver - Confirmation</div>
+    <div class="tc-card">
+    
+      <div class="tc-card">
+        <div class="tc-header" onclick="toggle('MTS-515-TC-01_ANDROID')">
+          <span class="tc-id">MTS-515-TC-01</span>
+          <span class="tc-name">[Success] แสดงข้อมูลครบใน Confirmation ขาย</span>
+          <span class="platform-tag">ANDROID</span>
+          <span class="badge skip">Skip</span>
+        </div>
+        <div class="tc-body" id="MTS-515-TC-01_ANDROID">
+          
+          <div class="section-title">Test Steps</div>
+          <ol class="steps-list">
+          <li>ตรวจสอบ field ทั้งหมด</li>
+          </ol>
+          
+          
+          <div class="section-title">Expected Result</div>
+          <div class="expected">แสดง: วันที่ขาย, ซิลเวอร์, ราคา/หน่วย, น้ำหนัก(KG), จำนวนเงิน, ช่องทางรับเงินคืน</div>
+          
+          
+          <div class="section-title">Error</div>
+          <div class="error-box">Skipped: Requires silver balance to sell — cannot reach Sell Confirmation page</div>
+          
+          
+          
+        </div>
+      </div>
+    
+      <div class="tc-card">
+        <div class="tc-header" onclick="toggle('MTS-515-TC-02_ANDROID')">
+          <span class="tc-id">MTS-515-TC-02</span>
+          <span class="tc-name">[Success] เลือกช่องทางรับเงิน 3 ช่องทาง</span>
+          <span class="platform-tag">ANDROID</span>
+          <span class="badge skip">Skip</span>
+        </div>
+        <div class="tc-body" id="MTS-515-TC-02_ANDROID">
+          
+          <div class="section-title">Test Steps</div>
+          <ol class="steps-list">
+          <li>กดที่ช่องทางรับเงิน</li><li>ดูตัวเลือก</li>
+          </ol>
+          
+          
+          <div class="section-title">Expected Result</div>
+          <div class="expected">แสดง BA, ODD-SCB, ODD-Kbank</div>
+          
+          
+          <div class="section-title">Error</div>
+          <div class="error-box">Skipped: Requires silver balance to sell — cannot reach Sell Confirmation page</div>
+          
+          
+          
+        </div>
+      </div>
+    
+      <div class="tc-card">
+        <div class="tc-header" onclick="toggle('MTS-515-TC-03_ANDROID')">
+          <span class="tc-id">MTS-515-TC-03</span>
+          <span class="tc-name">[Success] ODD ยังไม่ Register สามารถไป Register ได้</span>
+          <span class="platform-tag">ANDROID</span>
+          <span class="badge skip">Skip</span>
+        </div>
+        <div class="tc-body" id="MTS-515-TC-03_ANDROID">
+          
+          <div class="section-title">Test Steps</div>
+          <ol class="steps-list">
+          <li>กดเลือก ODD-SCB ที่ยังไม่ Register</li>
+          </ol>
+          
+          
+          <div class="section-title">Expected Result</div>
+          <div class="expected">แสดงปุ่ม/ลิงก์ไป Register ODD</div>
+          
+          
+          <div class="section-title">Error</div>
+          <div class="error-box">Skipped: Requires silver balance to sell — cannot reach Sell Confirmation page</div>
+          
+          
+          
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+</div>
+
+<div class="lb" id="lb" onclick="hideLB()">
+  <span class="lb-close">✕</span>
+  <img id="lb-img" src="">
+</div>
+
+<script>
+function toggle(id){var el=document.getElementById(id);el.classList.toggle('open');}
+function showLB(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open');}
+function hideLB(){document.getElementById('lb').classList.remove('open');}
+</script>
+</body>
+</html>
